@@ -1,7 +1,7 @@
 # 18224: Tapeout Project 
 
 ## Project Description:
-This repository contains the verilog code for a class tapeout project, where my contribution is a 1-player mini game called "guess the pin" :smile: 
+This repository contains the verilog code for my S'23 class tapeout project, where my contribution is a 1-player mini game called "guess the pin" :smiley: 
 
 ## Guess The Pin 
 "Guess the Pin" is a mini 1-player game inspired by the board game "Mastermind" and the web-based game "Wordle". 
@@ -9,7 +9,8 @@ The objective of this game is for a player to correctly guess a random 4 digit p
 
 The game starts with all 4 hex displays set to '-' and the right-most switch on the FPGA set to high. 
 The player would the flip the right-most switch to low in order to begin the game. 
-They would then use the 4 left-most switches to set a 4-digit binary number (0-9) that is visible on the 1st hex display. 
+They would then use the 4 left-most switches to set a 4-digit binary number (0-9) that is visible on the 1st hex display. Once they are ready to lock
+in this hex display, they can press the center button. 
 They can press the right button to set the next hex display, or the left button the wrap around and set the right-most hex display. 
 Once a user has set all 4 hex displays with their guess, they can press the down button to lock their guess in. 
 If they got the guess correctly, then all the LEDs will light up green and the hex display shows the correct pin. 
@@ -22,19 +23,20 @@ what the possible pin could be if they already got a pin correct on their previo
 scenario and the user would benefit from knowing binary values 0-9 in order for the game to be enjoyable.  
 
 ## I/O
-For this game, there are 
-physical inputs: 
-- down button 
-- right button: Controls which hex display is currently being changed. If a player is already at the right-most hex display, 
+For my project, I will have 10 input and 5 output devices that I outline below. 
+### Inputs: 
+- Clock: Used to keep track of states in the code
+- Down button: Player presses this button when they are ready to lock in their guess  
+- Right button: Controls which hex display is currently being changed. If a player is already at the right-most hex display, 
 it will wrap around to the left-most hex display.  
-- left button 
-- center button
-- 4 left-most switches (binary number guess)
-- right-most switch  (reset)
-logical input:
-- clock 
+- Left button: Controls which hex display is currently being changed. If a player is already at the left-most hex display, 
+it will wrap around to the right-most hex display.  
+- Center button: Used to lock in the hex display number. 
+- 4 left-most switches: Used to control the binary number guess
+- Right-most switch: (reset) Controls if game is active or not. When it is HIGH, no pin is set and all hex displays are cleared to '-'. When it is LOW, pin is set and user can play as normal.
 
-output: 
-- 4 Hex display
-- LEDs 
+### Outputs: 
+- 4 Hex displays:  Each hex display is used to correspond to each digit in the secret pin, it can have values ranging from 0-9 and '-' to signify a number hasn't been set. 
+- LEDs: When all LEDs are turned on, it means that the player has correctly guessed the pin and the game is over.
+
 
