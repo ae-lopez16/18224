@@ -1,7 +1,7 @@
 # 18224: Tapeout Project 
 
 ## Project Description:
-This repository contains the verilog code for a class tapeout project, where my contribution is a 1-player mini game called "guess the pin" :joy: 
+This repository contains the verilog code for a class tapeout project, where my contribution is a 1-player mini game called "guess the pin" :smile: 
 
 ## Guess The Pin 
 "Guess the Pin" is a mini 1-player game inspired by the board game "Mastermind" and the web-based game "Wordle". 
@@ -14,7 +14,7 @@ They can press the right button to set the next hex display, or the left button 
 Once a user has set all 4 hex displays with their guess, they can press the down button to lock their guess in. 
 If they got the guess correctly, then all the LEDs will light up green and the hex display shows the correct pin. 
 If they guessed incorrectly, then the hex displays with the incorrect values will clear to '-' and the hex displays with the correct values will stay the same. 
-This is to give the user a hint on what the possible pin could be. To reset at any point in the game, the player can set the right-most switch to HIGH. \\
+This is to give the user a hint on what the possible pin could be. To reset at any point in the game, the player can set the right-most switch to HIGH. 
 
 For instance, if the secret pin was '1111' and the player guesses '9991' on their first try, the board will now display '- - - 1'. 
 If on the second try the user guesses '1881', the board will now display '1 - - 1'. The idea is that on each consecutive try, the player has a hint on 
